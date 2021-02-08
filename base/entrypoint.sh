@@ -11,4 +11,5 @@ if [ -e /app/server.properties ]; then
         /app/server.properties
 fi
 
+cd /app
 exec java -jar /paper/paper.jar -nogui
