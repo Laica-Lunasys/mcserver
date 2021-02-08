@@ -25,8 +25,11 @@ COPY --from=download_paper /paper/paper.jar /paper/
 # Setup user
 RUN chmod u+s /bin/*
 
+# Copy Entry point
+COPY entrypoint.sh /entrypoint.sh
+
 # Copy plugins...
 COPY app/ /app/
 
-CMD ["bash", "/app/entrypoint.sh"]
+CMD ["bash", "/entrypoint.sh"]
 #CMD ["java", "-jar", "/paper/paper.jar", "-nogui"]
